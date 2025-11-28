@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "hostRules": [
+    {
+      "hostType": "maven",
+      "matchHost": "http://artifactory-artifactory-nginx.artifactory.svc.cluster.local",
+      "username": "user",
+      "password": "{{ secrets.ARTIFACTORY_API_TOKEN }}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "maven"
+      ],
+      "registryUrls": [
+        "http://artifactory-artifactory-nginx.artifactory.svc.cluster.local/artifactory/maven-all"
+      ]
+    }
+  ]
+}
